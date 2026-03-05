@@ -1,82 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Ram Robles | Cloud Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-:root{
---bg:#0f172a;
---card:#1e293b;
---text:white;
---accent:#3b82f6;
-}
-
-.light{
---bg:#f8fafc;
---card:white;
---text:#0f172a;
---accent:#2563eb;
-}
-
 body{
 margin:0;
-font-family:'Inter',sans-serif;
-background:var(--bg);
-color:var(--text);
-transition:0.3s;
+font-family:Inter, sans-serif;
+background:#0f172a;
+color:white;
 }
 
-header{
+nav{
 display:flex;
 justify-content:space-between;
-align-items:center;
 padding:20px 10%;
-position:sticky;
-top:0;
-background:var(--bg);
+background:#020617;
 }
 
-.logo{
-font-weight:700;
-font-size:20px;
-}
-
-button{
-background:var(--accent);
-border:none;
-padding:8px 14px;
-border-radius:8px;
-color:white;
-cursor:pointer;
+nav h1{
+margin:0;
 }
 
 .hero{
 padding:120px 10%;
 text-align:center;
+background:linear-gradient(135deg,#3b82f6,#6366f1);
 }
 
-.hero h1{
+.hero h2{
 font-size:48px;
 margin:0;
 }
 
-.hero p{
-opacity:0.7;
-margin-top:10px;
-}
-
 .section{
 padding:80px 10%;
-}
-
-.section h2{
-margin-bottom:40px;
+max-width:1000px;
+margin:auto;
 }
 
 .cards{
@@ -86,18 +53,13 @@ gap:20px;
 }
 
 .card{
-background:var(--card);
+background:#1e293b;
 padding:20px;
-border-radius:12px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
+border-radius:10px;
 }
 
 .timeline{
-border-left:2px solid var(--accent);
+border-left:2px solid #3b82f6;
 padding-left:20px;
 }
 
@@ -105,104 +67,115 @@ padding-left:20px;
 margin-bottom:30px;
 }
 
-.timeline-item h3{
-margin:0;
-}
-
 footer{
 text-align:center;
 padding:40px;
-opacity:0.6;
-}
-
-.fade{
-opacity:0;
-transform:translateY(30px);
-transition:1s;
-}
-
-.fade.show{
-opacity:1;
-transform:none;
-}
-
-@media(max-width:768px){
-.hero h1{
-font-size:34px;
-}
+background:#020617;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<header>
+<nav>
 
-<div class="logo">Ram Robles</div>
+<h1>Ram Robles</h1>
 
-<button onclick="toggleMode()">🌙</button>
+<div>Cloud Engineer</div>
 
-</header>
+</nav>
 
-<section class="hero fade">
+<section class="hero">
 
-<h1>Cloud Engineer</h1>
+<h2>Cloud Engineer</h2>
 
 <p>Azure • .NET • Automation • APIs • SQL</p>
 
 </section>
 
-<section class="section fade">
+<section class="section">
 
 <h2>About Me</h2>
 
 <p>
-Cloud engineer focused on automation, backend development and cloud architecture using Microsoft Azure technologies.
+Cloud Engineer focused on Azure architecture, backend development and enterprise automation.
+Experienced building APIs, automating workflows and integrating systems using Microsoft cloud technologies.
 </p>
 
 </section>
 
-<section class="section fade">
+<section class="section">
 
 <h2>Projects</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>Automation System</h3>
-<p>Power Automate workflows integrating SQL and Teams.</p>
-</div>
-
-<div class="card">
 <h3>SQL Backup Automation</h3>
-<p>PowerShell scripts for automated database backups to OneDrive.</p>
+<p>PowerShell automation to generate SQL backups and upload them to OneDrive.</p>
 </div>
 
 <div class="card">
 <h3>API Integrations</h3>
-<p>.NET APIs integrating Microsoft Graph and internal systems.</p>
+<p>.NET APIs integrating Microsoft Graph, SharePoint and enterprise systems.</p>
+</div>
+
+<div class="card">
+<h3>Automation Workflows</h3>
+<p>Power Automate flows connecting SQL, Teams and internal platforms.</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="section fade">
+<section class="section">
 
 <h2>Experience</h2>
 
 <div class="timeline">
 
 <div class="timeline-item">
+
 <h3>Cloud Engineer</h3>
+
 <p>The Anglo Foundation</p>
+
+<p>Azure infrastructure, automation and system integrations.</p>
+
 </div>
 
 <div class="timeline-item">
+
 <h3>.NET Developer</h3>
-<p>Automation and enterprise integrations</p>
+
+<p>Backend development and enterprise integrations.</p>
+
 </div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Skills</h2>
+
+<div class="cards">
+
+<div class="card">Azure</div>
+
+<div class="card">C# / .NET</div>
+
+<div class="card">SQL Server</div>
+
+<div class="card">PowerShell</div>
+
+<div class="card">Power Automate</div>
+
+<div class="card">REST APIs</div>
 
 </div>
 
@@ -214,25 +187,6 @@ Cloud engineer focused on automation, backend development and cloud architecture
 
 </footer>
 
-<script>
-
-function toggleMode(){
-document.body.classList.toggle("light")
-}
-
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show")
-}
-})
-})
-
-document.querySelectorAll(".fade").forEach(el=>{
-observer.observe(el)
-})
-
-</script>
-
 </body>
+
 </html>
